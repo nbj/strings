@@ -158,4 +158,12 @@ class StrTest extends TestCase
         $this->assertTrue(Str::contains('Test', 'SomeTestString'));
         $this->assertFalse(Str::contains('SomeThingElse', 'SomeTestString'));
     }
+
+    /** @test */
+    public function str_can_get_a_subset_of_the_string()
+    {
+        $this->assertEquals('SomeTestString', Str::sub('SomeTestString'));
+        $this->assertEquals('TestString', Str::sub('SomeTestString', 4));
+        $this->assertEquals('Test', Str::sub('SomeTestString', 4, -6));
+    }
 }

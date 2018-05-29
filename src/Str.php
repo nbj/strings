@@ -169,4 +169,22 @@ class Str
     {
         return (bool) strpos($string, $search);
     }
+
+    /**
+     * Gets a subset of a given string
+     *
+     * @param string $string
+     * @param int $start
+     * @param int|null $length
+     *
+     * @return string
+     */
+    public static function sub($string, $start = 0, $length = null)
+    {
+        if ($length == null) {
+            $length = strlen($string);
+        }
+
+        return substr($string, $start, $length);
+    }
 }
